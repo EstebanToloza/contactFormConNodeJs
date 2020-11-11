@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/EstebanToloza/contactFormConNodeJs/issues"
   },
-  "homepage": "https://github.com/EstebanToloza/contactFormConNodeJs#readme"
+  "homepage": "https://github.com/EstebanToloza/contactFormConNodeJs#readme",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.6"
+  }
 }
