@@ -1,31 +1,15 @@
-const http = require('http')
-const fs = require('fs') //módulo para manera manejar el sistema de archivos
+const express = require('express')
+const app = express()
 
-const port = 3000
+const port = 3000 //configurando puerto
 
-const server = (req, res) => {
+app.listen(port) //se configura que escuche el puerto asignado
+/* 
+-Plantilla modelo para "endpoints" de express()
+app.TIPO_HTTP("/RUTA", (req, res) => {  
 
-    fs.readFile('front/index.html', (error, file) => {
-
-        if(error){
-            res.writeHead(404, { "Content-Type" : "text/plain"})
-            res.end(`Malio sal...`)
-        } else {
-            res.writeHead(200, { "Content-Type" : "text/html"})
-            res.end(file)
-        }
-    })
-    //res.end("Soy tu Script...")
-}
-
-http.createServer( server ).listen(port) //configuro las propiedades del servidor
-
-
-
-
-
-
-
-
-
-/* console.log("I am you Script") */
+})
+ */
+app.get("/contacto", (req, res) => {  
+    res.end('Desde acá vamos a contactarnos...')
+})
