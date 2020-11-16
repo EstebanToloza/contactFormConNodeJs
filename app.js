@@ -5,9 +5,7 @@ const port = 3000 //configurando puerto
 
 app.listen(port) //se configura que escuche el puerto asignado
 app.use( express.static('public') ) //indicamos la ubicación del archivo de contacto en la carpeta 'public'
-
-
-
+app.use ( express.urlencoded({ extended : true }) ) //de x-www-urlencoded a objetos.
 
 
 /* 
@@ -16,10 +14,12 @@ app.TIPO_HTTP("/RUTA", (req, res) => {
 
 })
  */
-app.get("/contacto", (req, res) => {  
-    res.end('Desde acá vamos a contactarnos...')
-})
 
 app.post("/enviar", (req, res) => {  
+    const contacto = req.body
+    console.log(contacto)
     res.end('Desde acá enviamos..')
 })
+
+
+
